@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "*.js": ["standard"]
+    "*.js": [
+      "standard --fix", "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,6 +28,7 @@
   "homepage": "https://github.com/tjthiagocosta/node-api-tdd#readme",
   "devDependencies": {
     "git-commit-msg-linter": "^4.0.7",
+    "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "standard": "^16.0.4"
   }
