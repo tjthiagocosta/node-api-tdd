@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tjthiagocosta/node-api-tdd#readme",
   "devDependencies": {
-    "git-commit-msg-linter": "^4.0.7"
+    "git-commit-msg-linter": "^4.0.7",
+    "standard": "^16.0.4"
   }
 }
