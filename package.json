@@ -17,6 +17,11 @@
       "pre-commit": "lint-staged"
     }
   },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tjthiagocosta/node-api-tdd.git"
