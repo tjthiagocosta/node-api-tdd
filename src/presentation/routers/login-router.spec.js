@@ -57,21 +57,6 @@ describe('Loguin Router', () => {
     expect(httpResponse.statusCode).toBe(400)
   })
 
-  test('should return 500 if no httpRequest is provided', async () => {
-    const { sut } = makeSut()
-    const httpResponse = await sut.route()
-    expect(httpResponse.statusCode).toBe(500)
-    expect(httpResponse.body).toEqual(new ServerError())
-  })
-
-  test('should return 500 if no httpRequest has no body', async () => {
-    const { sut } = makeSut()
-    const httpRequest = {}
-    const httpResponse = await sut.route(httpRequest)
-    expect(httpResponse.statusCode).toBe(500)
-    expect(httpResponse.body).toEqual(new ServerError())
-  })
-
   test('should call AuthUseCase with correct params', async () => {
     const { sut, authUseCaseSpy } = makeSut()
     const httpRequest = {
@@ -110,6 +95,21 @@ describe('Loguin Router', () => {
     const httpResponse = await sut.route(httpRequest)
     expect(httpResponse.statusCode).toBe(200)
     expect(httpResponse.body.accessToken).toEqual(authUseCaseSpy.accessToken)
+  })
+
+  test('should return 500 if no httpRequest is provided', async () => {
+    const { sut } = makeSut()
+    const httpResponse = await sut.route()
+    expect(httpResponse.statusCode).toBe(500)
+    expect(httpResponse.body).toEqual(new ServerError())
+  })
+
+  test('should return 500 if no httpRequest has no body', async () => {
+    const { sut } = makeSut()
+    const httpRequest = {}
+    const httpResponse = await sut.route(httpRequest)
+    expect(httpResponse.statusCode).toBe(500)
+    expect(httpResponse.body).toEqual(new ServerError())
   })
 
   test('should return 500 if no AuthUseCase is provided', async () => {
