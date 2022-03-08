@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/tjthiagocosta/node-api-tdd#readme",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.2.1",
     "git-commit-msg-linter": "^4.0.7",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
@@ -43,6 +44,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.1",
     "validator": "^13.7.0"
   }
 }
